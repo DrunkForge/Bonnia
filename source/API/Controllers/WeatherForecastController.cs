@@ -1,0 +1,47 @@
+﻿namespace DrunkForge.Bonnia.API.Controllers
+{
+	using DrunkForge.Bonnia.Features.Forecasts;
+	using Microsoft.AspNetCore.Authorization;
+	using Microsoft.AspNetCore.Mvc;
+	using Microsoft.Extensions.Logging;
+	using Microsoft.Identity.Web.Resource;
+	using System;
+	using System.Collections.Generic;
+	using System.Linq;
+
+	[Authorize]
+	[ApiController]
+	[Route("[controller]")]
+	public class WeatherForecastController : ControllerBase
+	{
+		private static readonly string[] Summaries = new[]
+		{
+			"Freezing", "Bracing", "Chilly", "Cool", "Mild", "Warm", "Balmy", "Hot", "Sweltering", "Scorching"
+		};
+
+		private readonly ILogger<WeatherForecastController> _logger;
+
+		// The Web API will only accept tokens 1) for users, and 2) having the "access_as_user" scope for this API
+		private static readonly string[] _scopeRequiredByApi = new string[] { "access_as_user" };
+
+		public WeatherForecastController(ILogger<WeatherForecastController> logger)
+		{
+			_logger = logger;
+		}
+
+		[HttpGet]
+		public IEnumerable<WeatherForecast> Get()
+		{
+			HttpContext.VerifyUserHasAnyAcceptedScope(_scopeRequiredByApi);
+
+			var rng = new Random();
+			return Enumerable.Range(1, 5).Select(index => new WeatherForecast
+			{
+				Date = DateTime.Now.AddDays(index),
+				TemperatureC = rng.Next(-20, 55),
+				Summary = Summaries[rng.Next(Summaries.Length)]
+			})
+			.ToArray();
+		}
+	}
+}

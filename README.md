@@ -1,2 +1,2 @@
-# Bonnia
-Finance Management for Separated/Divorced Couples
+# DrunkForge Bonnia
+Shared Finance Management for Separated/Divorced Couples

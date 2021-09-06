@@ -1,0 +1,12 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+	  <AssemblyName>DrunkForge.Bonnia.Infrastructure</AssemblyName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Abstractions\Bonnia.Abstractions.csproj" />
+    <ProjectReference Include="..\Features\Bonnia.Features.csproj" />
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,143 @@
+﻿<div class="top-row pl-4 navbar navbar-dark">
+	<a class="navbar-brand" href="">Drunkforge.Bonnia</a>
+	<button class="navbar-toggler" @onclick="ToggleNavMenu">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+</div>
+
+<div class="@NavMenuCssClass" @onclick="ToggleNavMenu">
+	<ul class="nav flex-column">
+		<li class="nav-item px-3">
+			<NavLink class="nav-link" href="" Match="NavLinkMatch.All">
+				<span class="oi oi-home" aria-hidden="true"></span> Syncfusion Blazor Samples
+			</NavLink>
+		</li>
+	</ul>
+ <div class="separator"></div>
+	<div class="scroller">
+	   <ul class="nav flex-column">
+				<li class="nav-item px-3">
+	<NavLink class="nav-link" href="datagrid-features">
+	<span class="syncfusion-blazor-icons syncfusion-blazor-icon-datagrid" aria-hidden="true"></span>DataGrid
+	</NavLink>
+	</li>
+	<li class="nav-item px-3">
+	<NavLink class="nav-link" href="charts-features">
+	<span class="syncfusion-blazor-icons syncfusion-blazor-icon-charts" aria-hidden="true"></span>Charts
+	</NavLink>
+	</li>
+	<li class="nav-item px-3">
+	<NavLink class="nav-link" href="inplaceeditor-features">
+	<span class="syncfusion-blazor-icons syncfusion-blazor-icon-inplaceeditor" aria-hidden="true"></span>In-place Editor
+	</NavLink>
+	</li>
+	<li class="nav-item px-3">
+	<NavLink class="nav-link" href="datepicker-features">
+	<span class="syncfusion-blazor-icons syncfusion-blazor-icon-datepicker" aria-hidden="true"></span>DatePicker
+	</NavLink>
+	</li>
+	<li class="nav-item px-3">
+	<NavLink class="nav-link" href="autocomplete-features">
+	<span class="syncfusion-blazor-icons syncfusion-blazor-icon-autocomplete" aria-hidden="true"></span>AutoComplete
+	</NavLink>
+	</li>
+	<li class="nav-item px-3">
+	<NavLink class="nav-link" href="combobox-features">
+	<span class="syncfusion-blazor-icons syncfusion-blazor-icon-combobox" aria-hidden="true"></span>ComboBox
+	</NavLink>
+	</li>
+	<li class="nav-item px-3">
+	<NavLink class="nav-link" href="dialog-features">
+	<span class="syncfusion-blazor-icons syncfusion-blazor-icon-dialog" aria-hidden="true"></span>Dialog
+	</NavLink>
+	</li>
+	<li class="nav-item px-3">
+	<NavLink class="nav-link" href="inputmask-features">
+	<span class="syncfusion-blazor-icons syncfusion-blazor-icon-inputmask" aria-hidden="true"></span>Input Mask
+	</NavLink>
+	</li>
+	<li class="nav-item px-3">
+	<NavLink class="nav-link" href="toggleswitchbutton-features">
+	<span class="syncfusion-blazor-icons syncfusion-blazor-icon-toggleswitchbutton" aria-hidden="true"></span>Toggle Switch Button
+	</NavLink>
+	</li>
+	<li class="nav-item px-3">
+	<NavLink class="nav-link" href="sidebar-features">
+	<span class="syncfusion-blazor-icons syncfusion-blazor-icon-sidebar" aria-hidden="true"></span>Sidebar
+	</NavLink>
+	</li>
+	<li class="nav-item px-3">
+	<NavLink class="nav-link" href="toolbar-features">
+	<span class="syncfusion-blazor-icons syncfusion-blazor-icon-toolbar" aria-hidden="true"></span>Toolbar
+	</NavLink>
+	</li>
+	<li class="nav-item px-3">
+	<NavLink class="nav-link" href="button-features">
+	<span class="syncfusion-blazor-icons syncfusion-blazor-icon-button" aria-hidden="true"></span>Button
+	</NavLink>
+	</li>
+	<li class="nav-item px-3">
+	<NavLink class="nav-link" href="buttongroup-features">
+	<span class="syncfusion-blazor-icons syncfusion-blazor-icon-buttongroup" aria-hidden="true"></span>Button Group
+	</NavLink>
+	</li>
+	<li class="nav-item px-3">
+	<NavLink class="nav-link" href="dropdownmenu-features">
+	<span class="syncfusion-blazor-icons syncfusion-blazor-icon-dropdownmenu" aria-hidden="true"></span>Dropdown Menu
+	</NavLink>
+	</li>
+	<li class="nav-item px-3">
+	<NavLink class="nav-link" href="splitbutton-features">
+	<span class="syncfusion-blazor-icons syncfusion-blazor-icon-splitbutton" aria-hidden="true"></span>Split Button
+	</NavLink>
+	</li>
+	<li class="nav-item px-3">
+	<NavLink class="nav-link" href="toast-features">
+	<span class="syncfusion-blazor-icons syncfusion-blazor-icon-toast" aria-hidden="true"></span>Toast
+	</NavLink>
+	</li>
+
+	   </ul>
+	</div>
+</div>
+ <style>
+		.scroller {
+			height: calc(100vh - 160px) !important;
+			overflow-y: auto;
+			width:287px;
+		}
+
+			.scroller::-webkit-scrollbar, scrollbar-thumb
+			.scroller::-webkit-scrollbar-thumb {
+				width: 8px;
+				height: 110px;
+				border-radius: 4px;
+				position: center;
+			}
+
+			.scroller::-webkit-scrollbar-thumb {
+				box-shadow: inset 0 0 0 10px #313C75;
+				border-radius: 4px;
+			}
+
+			.scroller::-webkit-scrollbar-track {
+				width: 28px;
+			}
+		.separator{
+		   border:1px solid #FFFFFF;
+		   opacity:0.14;
+		   width:247px;
+		   margin:1rem;
+		   margin-top:0px;
+		}
+	</style>
+@code {
+	private bool collapseNavMenu = true;
+
+	private string NavMenuCssClass => collapseNavMenu ? "collapse" : null;
+
+	private void ToggleNavMenu()
+	{
+		collapseNavMenu = !collapseNavMenu;
+	}
+}

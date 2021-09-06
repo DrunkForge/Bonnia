@@ -1,0 +1,25 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+	<PropertyGroup>
+		<AssemblyName>DrunkForge.Bonnia.API</AssemblyName>
+		<UserSecretsId>Drunkforge.Bonnia.API-D94CCD90-C83D-49DE-83BE-A5EF10DB5321</UserSecretsId>
+		<WebProject_DirectoryAccessLevelKey>0</WebProject_DirectoryAccessLevelKey>
+		<RootNamespace>DrunkForge.Bonnia.API</RootNamespace>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Microsoft.AspNetCore.Components.WebAssembly.Server" Version="5.0.4" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="5.0.4" NoWarn="NU1605" />
+		<PackageReference Include="Microsoft.AspNetCore.Authentication.OpenIdConnect" Version="5.0.4" NoWarn="NU1605" />
+		<PackageReference Include="Microsoft.Identity.Web" Version="1.1.0" />
+		<PackageReference Include="Microsoft.Identity.Web.UI" Version="1.1.0" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\Abstractions\Bonnia.Abstractions.csproj" />
+	  <ProjectReference Include="..\Features\Bonnia.Features.csproj" />
+	  <ProjectReference Include="..\Client\Bonnia.Client.csproj" />
+	  <ProjectReference Include="..\Infrastructure\Bonnia.Infrastructure.csproj" />
+	</ItemGroup>
+
+</Project>
